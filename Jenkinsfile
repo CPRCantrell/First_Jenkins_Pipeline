@@ -2,6 +2,12 @@ pipeline {
   agent any
   
   stages{
+    stage('Test'){
+      steps{
+        sh 'echo "Running tests…"'
+      }
+    }
+    
     stage('Build'){
       steps{
         sh 'echo "Building Application..."'
@@ -20,6 +26,12 @@ pipeline {
         }
         
         sh 'docker --version'
+      }
+    }
+    
+    stage('Deploy'){
+      steps{
+        sh 'echo "Deploying application to EC2 instance…"'
       }
     }
     
