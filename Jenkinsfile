@@ -16,11 +16,11 @@ pipeline {
     
     stage('Docker'){
       steps{
-        script{
+        script {
           def dockerTool = tool name: 'docker-latest-tool', type: 'org.jenkinsci.plugins.docker.commons.tools.DockerTool'
-            env.PATH = '${dockerTool}/bin:${env.PATH}'
+          env.PATH = "${dockerTool}/bin:${env.PATH}"
         }
-        sh 'docker --version'
+        sh "docker --version"
       }
     }
     
