@@ -5,7 +5,7 @@ pipeline {
     stage('Test'){
       steps{
         script{
-          def nodeTool = tool name: 'node-20-tool', type: 'jenkins.plugins.nodejs.tools.NodeJSInstallation'
+          def nodejsTool = tool name: 'node-20-tool', type: 'jenkins.plugins.nodejs.tools.NodeJSInstallation'
           env.PATH = "${nodejsTool}/bin:${env.PATH}"
         }
         
