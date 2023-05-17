@@ -9,7 +9,7 @@ pipeline {
           env.PATH = "${nodejsTool}/bin:${env.PATH}"
         }
         
-        sh 'node --version'
+        sh "node --version"
       }
     }
     
