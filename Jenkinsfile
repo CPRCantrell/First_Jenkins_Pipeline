@@ -4,7 +4,12 @@ pipeline {
   stages{
     stage('Test'){
       steps{
-        sh 'echo "Running tests…"'
+        script{
+          def nodeTool = tool name: 'node-20-tool', type: 'jenkins.plugins.nodejs.tools.NodeJSInstallation'
+          env.PATH = "${nodejsTool}/bin:${env.PATH}"
+        }
+        
+        sh 'node --version'
       }
     }
     
